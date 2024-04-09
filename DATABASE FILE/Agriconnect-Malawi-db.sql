@@ -44,26 +44,39 @@ UNLOCK TABLES;
 -- Table structure for table `tbl_mid_category`
 --
 
-DROP TABLE IF EXISTS `tbl_mid_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_mid_category` (
-  `mcat_id` int NOT NULL AUTO_INCREMENT,
+  `mcat_id` int(11) NOT NULL,
   `mcat_name` varchar(255) NOT NULL,
-  `tcat_id` int NOT NULL,
-  PRIMARY KEY (`mcat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `tcat_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_mid_category`
 --
 
-LOCK TABLES `tbl_mid_category` WRITE;
-/*!40000 ALTER TABLE `tbl_mid_category` DISABLE KEYS */;
-INSERT INTO `tbl_mid_category` VALUES (18,'Fruit Products',1),(19,'Dairy',1),(20,'Grains and Legumes',1),(21,'Meat',1),(22,'Eggs',1),(23,'Poultry',5),(24,'Goat',5),(25,'Cattle',5);
-/*!40000 ALTER TABLE `tbl_mid_category` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `tbl_mid_category` (`mcat_id`, `mcat_name`, `tcat_id`) VALUES
+(1, 'Fruit Products', 1),
+(2, 'Dairy', 1),
+(3, 'Grains and Legumes', 1),
+(4, 'Meat', 1),
+(5, 'Poultry', 5),
+(6, 'Goat', 5),
+(7, 'Cattle', 5),
+(8, 'Swine', 5),
+(9, 'Sheep', 5),
+(10, 'Seeds', 2),
+(11, 'Fertilizer', 2),
+(12, 'Chemicals', 2),
+(13, 'Flour', 3),
+(14, 'Sugar', 3),
+(15, 'Vegetables oil', 3),
+(16, 'Tractors', 8),
+(17, 'Irrigation equipment', 8),
+(18, 'Harvesting equipment', 8),
+(19, 'Farm tools', 8),
+(20, 'Other', 8);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `tbl_order`
@@ -220,32 +233,6 @@ LOCK TABLES `tbl_product` WRITE;
 /*!40000 ALTER TABLE `tbl_product` DISABLE KEYS */;
 INSERT INTO `tbl_product` VALUES (103,'Local mangoes','110','150',30,'product-featured-103.jpg','<p>Malawian Mangoes</p>','Malawian Mangoes Short','','<p>Fresh</p>','<p>No any</p>',24,1,1,80),(104,'indian','180','200',50,'product-featured-104.png','<p>Mongies, indian variety</p>','<p>Indian Mangoes</p>','<p>N/A</p>','<p>Fresh</p>','<p>No any</p>',0,1,1,80),(105,'kensington Mangoes','120','140',74,'product-featured-105.jpg','<p>kensington, Indian mango variety<br></p>','<p>Indian Mangoes</p>','','<p>fresh</p>','<p>No any</p>',4,1,1,80),(109,'Tanzania Apples','130','150',70,'product-featured-104.jpg','<p>Tanzanian apples</p>','<p>Tanzania Apples</p>','','<p>fresh</p>','<p>No any</p>',1,0,1,81),(110,'British apples','180','200',64,'product-featured-110.jpg','<p>British apple variety</p>','<p>British apples</p>','','<p>No any</p>','<p>no any</p>',4,0,1,81);
 /*!40000 ALTER TABLE `tbl_product` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_rating`
---
-
-DROP TABLE IF EXISTS `tbl_rating`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `tbl_rating` (
-  `rt_id` int NOT NULL AUTO_INCREMENT,
-  `p_id` int NOT NULL,
-  `cust_id` int NOT NULL,
-  `comment` text NOT NULL,
-  `rating` int NOT NULL,
-  PRIMARY KEY (`rt_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_rating`
---
-
-LOCK TABLES `tbl_rating` WRITE;
-/*!40000 ALTER TABLE `tbl_rating` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_rating` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
