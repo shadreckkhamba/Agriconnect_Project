@@ -19,26 +19,76 @@
 -- Table structure for table `tbl_end_category`
 --
 
-DROP TABLE IF EXISTS `tbl_end_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_end_category` (
-  `ecat_id` int NOT NULL AUTO_INCREMENT,
+  `ecat_id` int(11) NOT NULL,
   `ecat_name` varchar(255) NOT NULL,
-  `mcat_id` int NOT NULL,
-  PRIMARY KEY (`ecat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `mcat_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_end_category`
 --
 
-LOCK TABLES `tbl_end_category` WRITE;
-/*!40000 ALTER TABLE `tbl_end_category` DISABLE KEYS */;
-INSERT INTO `tbl_end_category` VALUES (1,'Headwear ',1),(2,'Sunglasses',1),(3,'Watches',1),(4,'Sandals',2),(5,'Boots',2),(6,'Tops',3),(7,'T-Shirt',3),(8,'Watches',4),(9,'Sunglasses',4),(11,'Sports Shoes',2),(12,'Sandals',6),(13,'Flat Shoes',6),(14,'Hoodies',7),(15,'Coats & Jackets',7),(16,'Pants',8),(17,'Jeans',8),(18,'Joggers',8),(19,'Shorts',8),(20,'T-shirts',9),(21,'Casual Shirts',9),(22,'Formal Shirts',9),(23,'Polo Shirts',9),(24,'Vests',9),(25,'Casual Shoes',2),(26,'Boys',10),(27,'Girls',10),(28,'Boys',11),(29,'Girls',11),(30,'Boys',12),(31,'Girls',12),(32,'Dresses',7),(33,'Tops',7),(34,'T-Shirts & Vests',7),(35,'Pants & Leggings',7),(36,'Sportswear',7),(37,'Plus Size Clothing',7),(38,'Socks & Hosiery',7),(39,'Fragrance',3),(40,'Skincare',3),(41,'Hair Care',3),(42,'Jewellery',4),(43,'Eyes Care',3),(44,'Lips',3),(45,'Face Care',3),(46,'Gift Sets',3),(47,'Scarves & Headwear',4),(48,'Multipacks',4),(49,'Other Accessories',4),(50,'Pumps',6),(51,'Sneakers',6),(52,'Sports Shoes',6),(53,'Boots',6),(54,'Comfort Shoes',6),(55,'Slippers & Casual Shoes',6),(56,'Formal Shoes',2),(57,'Belts',1),(58,'Multipacks',1),(59,'Other Accessories',1),(60,'Bags',4),(61,'Cell Phone and Accessories',14),(62,'Headphones',14),(63,'Security and Surveillance',14),(64,'Television and Video',14),(65,'GPS and Navigation',14),(66,'Home Audio',14),(67,'Computer Components',15),(68,'Computers and Tablets',15),(69,'Laptop Accessories',15),(70,'Printer and Monitors',15),(71,'External Components',15),(72,'Networking Products',15),(73,'Medical Supplies and Equipment',16),(74,'Oral Care',16),(75,'Vision Care',16),(76,'Vitamins and Dietary Supplements',16),(77,'Baby and Child Care',17),(78,'Household Supplies',17),(79,'Stationery and Gift Wrapping Supplies',17),(80,'Mangoes',18),(81,'Apples',18),(82,'Chicken',22),(83,'Chicken',23),(84,'Local',24);
-/*!40000 ALTER TABLE `tbl_end_category` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `tbl_end_category` (`ecat_id`, `ecat_name`, `mcat_id`) VALUES
+(1, 'Mangoes', 1),
+(2, 'Apples', 1),
+(3, 'Oranges', 1),
+(4, 'Avocados', 1),
+(5, 'Watermelons', 1),
+(6, 'Other', 1),
+(7, 'Chicken', 5),
+(8, 'Turkeys', 5),
+(9, 'Ducks', 5),
+(10, 'Other', 5),
+(11, 'Goats and kids', 6),
+(12, 'Cows', 7),
+(13, 'Bulls', 7),
+(14, 'Pigs', 8),
+(15, 'Sheep and lambs', 9),
+(16, 'Milk', 2),
+(17, 'Eggs', 2),
+(18, 'Yogurt', 2),
+(19, 'Butter', 2),
+(20, 'Maize', 3),
+(21, 'Soyabeans', 3),
+(22, 'Rice', 3),
+(23, 'Ground nuts', 3),
+(24, 'Wheat', 3),
+(25, 'Other', 3),
+(26, 'Beef', 4),
+(27, 'Pork', 4),
+(28, 'Chicken', 4),
+(29, 'Lamb', 4),
+(30, 'Turkey', 4),
+(31, 'Corn seeds', 10),
+(32, 'Soyabean seeds', 10),
+(33, 'Nitorgen fertilizer', 11),
+(34, 'NPKs fertilizer', 11),
+(35, 'Urea', 11),
+(36, 'Pestcides', 12),
+(37, 'Herbicides', 12),
+(38, 'Fungicides', 12),
+(39, 'Baking flour', 13),
+(40, 'All purpose flour', 13),
+(41, 'Granulated sugar', 14),
+(42, 'Olive oil', 15),
+(43, 'Sunflower oil', 15),
+(44, 'Utility tractors', 16),
+(45, 'Garden tractors', 16),
+(46, 'Compact tractors', 16),
+(47, 'Sprinkler irrigation systems', 17),
+(48, 'Drip irrigation systems', 17),
+(49, 'Surface irrigation systems', 17),
+(50, 'Others', 17),
+(51, 'Combine harvesters', 18),
+(52, 'Cotton harvestors', 18),
+(53, 'Hoes', 19),
+(54, 'Sholvels', 19),
+(55, 'Garden forks and rakes', 19),
+(56, 'Wheelbarrows', 19),
+(57, 'Others', 20);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `tbl_mid_category`
@@ -198,36 +248,43 @@ LOCK TABLES `tbl_payment` WRITE;
 /*!40000 ALTER TABLE `tbl_payment` ENABLE KEYS */;
 UNLOCK TABLES;
 
+
 --
 -- Table structure for table `tbl_product`
 --
 
-DROP TABLE IF EXISTS `tbl_product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_product` (
-  `p_id` int NOT NULL AUTO_INCREMENT,
+  `p_id` int(11) NOT NULL,
   `p_name` varchar(255) NOT NULL,
+  `uploader` varchar(100) NOT NULL DEFAULT 'none',
   `p_old_price` varchar(10) NOT NULL,
   `p_current_price` varchar(10) NOT NULL,
-  `p_qty` int NOT NULL,
+  `p_qty` int(11) NOT NULL,
   `p_featured_photo` varchar(255) NOT NULL,
   `p_description` text NOT NULL,
   `p_short_description` text NOT NULL,
   `p_feature` text NOT NULL,
   `p_condition` text NOT NULL,
   `p_return_policy` text NOT NULL,
-  `p_total_view` int NOT NULL,
-  `p_is_featured` int NOT NULL,
-  `p_is_active` int NOT NULL,
-  `ecat_id` int NOT NULL,
-  PRIMARY KEY (`p_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `p_total_view` int(11) NOT NULL,
+  `p_is_featured` int(11) NOT NULL,
+  `p_is_active` int(11) NOT NULL,
+  `ecat_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_product`
 --
+
+INSERT INTO `tbl_product` (`p_id`, `p_name`, `uploader`, `p_old_price`, `p_current_price`, `p_qty`, `p_featured_photo`, `p_description`, `p_short_description`, `p_feature`, `p_condition`, `p_return_policy`, `p_total_view`, `p_is_featured`, `p_is_active`, `ecat_id`) VALUES
+(117, 'kentt', 'kapembe@mail.com', '100', '120', 11, 'product-featured-1.jpg', '<p>Kentt mangoes</p>', '<p>Mangoes</p>', '', '<p>fresh</p>', '<p>No any</p>', 31, 1, 1, 80),
+(118, 'British apples', 'none', '140', '170', 45, 'product-featured-118.jpg', '<p>British apples</p>', '<p>Apples</p>', '', '<p>fresh</p>', '<p>No any</p>', 0, 1, 1, 81),
+(119, 'Kenyan Mangoes', 'none', '60', '85', 37, 'product-featured-119.jpg', '<p>Kenyan mangoes</p>', '<p>Mangoes</p>', '', '<p>fresh</p>', '<p>No any</p>', 4, 1, 1, 80),
+(120, 'Tanzanian apples', 'none', '70', '82', 5, 'product-featured-120.jpg', '<p>Tanzania apples</p>', '<p>apples</p>', '', '<p>Fresh</p>', '<p>No any</p>', 7, 1, 1, 81),
+(122, 'Second hand wheel barrow', 'kapembe@mail.com', '120000', '100000', 1, 'product-featured-122.jpg', '<p>Fairly Used Wheelbarrow</p>', '<p>Second hand</p>', '<p>Some Features here of wheelbarrow</p>', '<p>Second hand</p>', '<p>No return policy</p>', 5, 0, 1, 85);
+
+-- --------------------------------------------------------
+
 
 LOCK TABLES `tbl_product` WRITE;
 /*!40000 ALTER TABLE `tbl_product` DISABLE KEYS */;
@@ -239,11 +296,8 @@ UNLOCK TABLES;
 -- Table structure for table `tbl_settings`
 --
 
-DROP TABLE IF EXISTS `tbl_settings`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_settings` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `logo` varchar(255) NOT NULL,
   `favicon` varchar(255) NOT NULL,
   `footer_about` text NOT NULL,
@@ -257,13 +311,13 @@ CREATE TABLE `tbl_settings` (
   `receive_email_subject` varchar(255) NOT NULL,
   `receive_email_thank_you_message` text NOT NULL,
   `forget_password_message` text NOT NULL,
-  `total_recent_post_footer` int NOT NULL,
-  `total_popular_post_footer` int NOT NULL,
-  `total_recent_post_sidebar` int NOT NULL,
-  `total_popular_post_sidebar` int NOT NULL,
-  `total_featured_product_home` int NOT NULL,
-  `total_latest_product_home` int NOT NULL,
-  `total_popular_product_home` int NOT NULL,
+  `total_recent_post_footer` int(11) NOT NULL,
+  `total_popular_post_footer` int(11) NOT NULL,
+  `total_recent_post_sidebar` int(11) NOT NULL,
+  `total_popular_post_sidebar` int(11) NOT NULL,
+  `total_featured_product_home` int(11) NOT NULL,
+  `total_latest_product_home` int(11) NOT NULL,
+  `total_popular_product_home` int(11) NOT NULL,
   `meta_title_home` text NOT NULL,
   `meta_keyword_home` text NOT NULL,
   `meta_description_home` text NOT NULL,
@@ -300,27 +354,30 @@ CREATE TABLE `tbl_settings` (
   `before_head` text NOT NULL,
   `after_body` text NOT NULL,
   `before_body` text NOT NULL,
-  `home_service_on_off` int NOT NULL,
-  `home_welcome_on_off` int NOT NULL,
-  `home_featured_product_on_off` int NOT NULL,
-  `home_latest_product_on_off` int NOT NULL,
-  `home_popular_product_on_off` int NOT NULL,
-  `home_testimonial_on_off` int NOT NULL,
-  `home_blog_on_off` int NOT NULL,
-  `newsletter_on_off` int NOT NULL,
-  `ads_above_welcome_on_off` int NOT NULL,
-  `ads_above_featured_product_on_off` int NOT NULL,
-  `ads_above_latest_product_on_off` int NOT NULL,
-  `ads_above_popular_product_on_off` int NOT NULL,
-  `ads_above_testimonial_on_off` int NOT NULL,
-  `ads_category_sidebar_on_off` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MYISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPRESSED;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `home_service_on_off` int(11) NOT NULL,
+  `home_welcome_on_off` int(11) NOT NULL,
+  `home_featured_product_on_off` int(11) NOT NULL,
+  `home_latest_product_on_off` int(11) NOT NULL,
+  `home_popular_product_on_off` int(11) NOT NULL,
+  `home_testimonial_on_off` int(11) NOT NULL,
+  `home_blog_on_off` int(11) NOT NULL,
+  `newsletter_on_off` int(11) NOT NULL,
+  `ads_above_welcome_on_off` int(11) NOT NULL,
+  `ads_above_featured_product_on_off` int(11) NOT NULL,
+  `ads_above_latest_product_on_off` int(11) NOT NULL,
+  `ads_above_popular_product_on_off` int(11) NOT NULL,
+  `ads_above_testimonial_on_off` int(11) NOT NULL,
+  `ads_category_sidebar_on_off` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=COMPRESSED;
 
 --
 -- Dumping data for table `tbl_settings`
 --
+
+INSERT INTO `tbl_settings` (`id`, `logo`, `favicon`, `footer_about`, `footer_copyright`, `contact_address`, `contact_email`, `contact_phone`, `contact_fax`, `contact_map_iframe`, `receive_email`, `receive_email_subject`, `receive_email_thank_you_message`, `forget_password_message`, `total_recent_post_footer`, `total_popular_post_footer`, `total_recent_post_sidebar`, `total_popular_post_sidebar`, `total_featured_product_home`, `total_latest_product_home`, `total_popular_product_home`, `meta_title_home`, `meta_keyword_home`, `meta_description_home`, `banner_login`, `banner_registration`, `banner_forget_password`, `banner_reset_password`, `banner_search`, `banner_cart`, `banner_checkout`, `banner_product_category`, `banner_blog`, `cta_title`, `cta_content`, `cta_read_more_text`, `cta_read_more_url`, `cta_photo`, `featured_product_title`, `featured_product_subtitle`, `latest_product_title`, `latest_product_subtitle`, `popular_product_title`, `popular_product_subtitle`, `testimonial_title`, `testimonial_subtitle`, `testimonial_photo`, `blog_title`, `blog_subtitle`, `newsletter_text`, `paypal_email`, `stripe_public_key`, `stripe_secret_key`, `bank_detail`, `before_head`, `after_body`, `before_body`, `home_service_on_off`, `home_welcome_on_off`, `home_featured_product_on_off`, `home_latest_product_on_off`, `home_popular_product_on_off`, `home_testimonial_on_off`, `home_blog_on_off`, `newsletter_on_off`, `ads_above_welcome_on_off`, `ads_above_featured_product_on_off`, `ads_above_latest_product_on_off`, `ads_above_popular_product_on_off`, `ads_above_testimonial_on_off`, `ads_category_sidebar_on_off`) VALUES
+(1, 'logo.jpeg', 'favicon.png', '<p>Lorem ipsum dolor sit amet, omnis signiferumque in mei, mei ex enim concludaturque. Senserit salutandi euripidis no per, modus maiestatis scribentur est an.Â Ea suas pertinax has.</p>\r\n', 'Copyright © 2024 - AgriConnect-Malawi', 'Free market \r\nBlantyre', 'support@agriconnect-malawi.com', '+265880218905', '', '<iframe src=\"https://www.google.com/maps/place/6254%2BWX3+Blantyre+Market,+Market+Street,+Blantyre/@-15.7895743,35.004898,17.02z/data=!4m6!3m5!1s0x18d845a7b76ce68d:0x9de528f83fb4b182!8m2!3d-15.7906358!4d35.0073189!16s%2Fg%2F11b8tgs1x2?authuser=0&entry=ttu\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>', 'support@ecommercephp.com', 'Visitor Email Message from Ecommerce Site PHP', 'Thank you for sending email. We will contact you shortly.', 'A confirmation link is sent to your email address. You will get the password reset information in there.', 4, 4, 5, 5, 5, 5, 6, 'AgriConnect-Malawi', 'AgriConnect-Malawi', 'AgriConnect-Malawi', 'banner_login.jpg', 'banner_registration.jpg', 'banner_forget_password.jpg', 'banner_reset_password.jpg', 'banner_search.jpg', 'banner_cart.jpg', 'banner_checkout.jpg', 'banner_product_category.jpg', 'banner_blog.jpg', 'Welcome To Our Ecommerce Website', 'Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens expetenda id sit, \r\nat usu eius eligendi singulis. Sea ocurreret principes ne. At nonumy aperiri pri, nam quodsi copiosae intellegebat et, ex deserunt euripidis usu. ', 'Read More', '#', 'cta.jpg', 'Featured Products', 'Our list on Top Featured Products', 'Latest Products', 'Our list of recently added products', 'Popular Products', 'Popular products based on customer\'s choice', 'Testimonials', 'See what our clients tell about us', 'testimonial.jpg', 'Latest Blog', 'See all our latest articles and news from below', 'Sign-up to our newsletter for latest promotions and discounts.', 'admin@ecom.com', 'pk_test_0SwMWadgu8DwmEcPdUPRsZ7b', 'sk_test_TFcsLJ7xxUtpALbDo1L5c1PN', 'Bank Name: National Bank of Malawi\r\nAccount Number: 100600645\r\nBranch Name: Zomba branch', '', '<div id=\"fb-root\"></div>\r\n<script>(function(d, s, id) {\r\n  var js, fjs = d.getElementsByTagName(s)[0];\r\n  if (d.getElementById(id)) return;\r\n  js = d.createElement(s); js.id = id;\r\n  js.src = \"//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=323620764400430\";\r\n  fjs.parentNode.insertBefore(js, fjs);\r\n}(document, \'script\', \'facebook-jssdk\'));</script>', '<!--Start of Tawk.to Script-->\n<script type=\"text/javascript\">\nvar Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();\n(function(){\nvar s1=document.createElement(\"script\"),s0=document.getElementsByTagName(\"script\")[0];\ns1.async=true;\ns1.src=\'https://embed.tawk.to/5ae370d7227d3d7edc24cb96/default\';\ns1.charset=\'UTF-8\';\ns1.setAttribute(\'crossorigin\',\'*\');\ns0.parentNode.insertBefore(s1,s0);\n})();\n</script>\n<!--End of Tawk.to Script-->', 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1);
+
+-- --------------------------------------------------------
 
 LOCK TABLES `tbl_settings` WRITE;
 /*!40000 ALTER TABLE `tbl_settings` DISABLE KEYS */;
@@ -332,53 +389,48 @@ UNLOCK TABLES;
 -- Table structure for table `tbl_slider`
 --
 
-DROP TABLE IF EXISTS `tbl_slider`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_slider` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `photo` varchar(255) NOT NULL,
   `heading` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `button_text` varchar(255) NOT NULL,
   `button_url` varchar(255) NOT NULL,
-  `position` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `position` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_slider`
 --
 
-LOCK TABLES `tbl_slider` WRITE;
-/*!40000 ALTER TABLE `tbl_slider` DISABLE KEYS */;
-INSERT INTO `tbl_slider` VALUES (4,'slider-4.jpg','Welcome to AgriConnect-Malawi','Shop online farm Products','','','Center'),(5,'slider-4.jpeg','50% Discount on all Products','Buy more enjoy high Discounts','','','Center'),(6,'slider-6.jpg','24 Hours Customer Support','Anytime we are available for you','','','Right');
-/*!40000 ALTER TABLE `tbl_slider` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `tbl_slider` (`id`, `photo`, `heading`, `content`, `button_text`, `button_url`, `position`) VALUES
+(4, 'slider-4.jpg', 'Welcome to AgriConnect-Malawi', 'Shop online farm products and farm tools', '', '', 'Center'),
+(5, 'slider-4.jpeg', '50% Discount on all Products', 'Buy more enjoy high Discounts', '', '', 'Center'),
+(6, 'slider-6.jpg', '24 Hours Customer Support', 'Anytime we are available for you', '', '', 'Right');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `tbl_top_category`
 --
 
-DROP TABLE IF EXISTS `tbl_top_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `tbl_top_category` (
-  `tcat_id` int NOT NULL AUTO_INCREMENT,
+  `tcat_id` int(11) NOT NULL,
   `tcat_name` varchar(255) NOT NULL,
-  `show_on_menu` int NOT NULL,
-  PRIMARY KEY (`tcat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `show_on_menu` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_top_category`
 --
 
-LOCK TABLES `tbl_top_category` WRITE;
-/*!40000 ALTER TABLE `tbl_top_category` DISABLE KEYS */;
-INSERT INTO `tbl_top_category` VALUES (1,'Food Products',1),(2,'Non-Food Products',1),(3,'Prepared Products',1),(4,'Health and Wellness',1),(5,'Livestock',1);
-/*!40000 ALTER TABLE `tbl_top_category` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `tbl_top_category` (`tcat_id`, `tcat_name`, `show_on_menu`) VALUES
+(1, 'Food Products', 1),
+(2, 'Non-Food Products', 1),
+(3, 'Prepared Products', 1),
+(5, 'Livestock', 1),
+(8, 'Machinery & Tools', 1);
+
+-- --------------------------------------------------------
+
 
