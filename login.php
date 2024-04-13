@@ -35,3 +35,33 @@ if(isset($_POST['form1'])){
         foreach($result2 as $row2) { 
             $row_password2 = $row2['password'];
 }
+if($total==0 && $total2==0) {
+    $error_message .= LANG_VALUE_133.'<br>';
+} else {
+    //using MD5 form
+    if( $row_password != md5($cust_password)) {
+        $error_message .= LANG_VALUE_139.'<br>';
+    } else {
+        if($cust_status == 0) {
+            $error_message .= LANG_VALUE_148.'<br>';
+        } else {
+            if ($row_acc_type=="customer") {
+                # code...
+                $_SESSION['customer'] = $row;
+                header("location: ".BASE_URL."index.php");
+            }else if ($row_acc_type=="vendor") {
+                # code...
+                $_SESSION['user'] = $row2;
+                header("location: ./vendor/index.php");
+                
+            } else {
+                $error_message .= "No user details match".'<br>';
+            }
+            
+        }
+    }
+    
+}
+}
+}
+?>
