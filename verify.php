@@ -1,8 +1,7 @@
 <?php require_once('header.php'); ?>
 
 <?php
-if ( (!isset($_REQUEST['email'])) || (isset($_REQUEST['token'])) )
-{
+if ( (!isset($_REQUEST['email'])) || (isset($_REQUEST['token'])) ){
     $var = 1;
 
     // check if the token is correct and match with database.
