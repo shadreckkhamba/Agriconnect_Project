@@ -313,7 +313,7 @@ if($cur_page == 'customer-order.php') {
 					<ul>
 						<li><a href="index.php">Home</a></li>
 						
-						<?php
+	<?php
 						$statement = $pdo->prepare("SELECT * FROM tbl_top_category WHERE show_on_menu=1");
 						$statement->execute();
 						$result = $statement->fetchAll(PDO::FETCH_ASSOC);
