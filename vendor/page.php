@@ -87,7 +87,7 @@ if(isset($_POST['form_faq'])) {
     if($valid == 1) {
 
         if($path != '') {
-            
+
             // removing the existing photo
             $statement = $pdo->prepare("SELECT * FROM tbl_page WHERE id=1");
             $statement->execute();
@@ -115,7 +115,6 @@ if(isset($_POST['form_faq'])) {
     }
     
 }
-
 
 
 if(isset($_POST['form_contact'])) {
@@ -405,9 +404,6 @@ foreach ($result as $row) {
                             </div>
                             </form>
                         </div>
-
-
-
                 
 
             </form>
