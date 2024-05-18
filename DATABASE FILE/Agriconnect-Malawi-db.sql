@@ -544,7 +544,7 @@ CREATE TABLE `tbl_product` (
   `p_short_description` text NOT NULL,
   `p_feature` text NOT NULL,
   `p_condition` text NOT NULL,
-  `p_return_policy` text NOT NULL,
+  `p_return_policy` text DEFAULT NULL,
   `p_total_view` int(11) NOT NULL,
   `p_is_featured` int(11) NOT NULL,
   `p_is_active` int(11) NOT NULL,
