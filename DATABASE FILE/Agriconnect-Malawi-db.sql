@@ -30,70 +30,31 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_customer` (
   `cust_id` int(11) NOT NULL,
   `cust_name` varchar(100) DEFAULT NULL,
-  `cust_cname` varchar(100) DEFAULT NULL,
   `cust_email` varchar(100) DEFAULT NULL,
   `cust_phone` varchar(50) DEFAULT NULL,
-  `cust_country` int(11) DEFAULT NULL,
   `cust_address` text DEFAULT NULL,
   `cust_city` varchar(100) DEFAULT NULL,
-  `cust_state` varchar(100) DEFAULT NULL,
-  `cust_zip` varchar(30) DEFAULT NULL,
-  `cust_b_name` varchar(100) DEFAULT NULL,
-  `cust_b_cname` varchar(100) DEFAULT NULL,
-  `cust_b_phone` varchar(50) DEFAULT NULL,
-  `cust_b_country` int(11) DEFAULT NULL,
-  `cust_b_address` text DEFAULT NULL,
-  `cust_b_city` varchar(100) DEFAULT NULL,
-  `cust_b_state` varchar(100) DEFAULT NULL,
-  `cust_b_zip` varchar(30) DEFAULT NULL,
   `cust_s_name` varchar(100) DEFAULT NULL,
-  `cust_s_cname` varchar(100) DEFAULT NULL,
   `cust_s_phone` varchar(50) DEFAULT NULL,
-  `cust_s_country` int(11) DEFAULT NULL,
   `cust_s_address` text DEFAULT NULL,
   `cust_s_city` varchar(100) DEFAULT NULL,
-  `cust_s_state` varchar(100) DEFAULT NULL,
-  `cust_s_zip` varchar(30) DEFAULT NULL,
   `cust_password` varchar(100) DEFAULT NULL,
   `cust_token` varchar(255) DEFAULT NULL,
   `cust_datetime` varchar(100) DEFAULT NULL,
   `cust_timestamp` varchar(100) DEFAULT NULL,
   `cust_status` int(11) DEFAULT NULL,
-  `acc_type` varchar(50) CHARACTER SET armscii8 COLLATE armscii8_general_ci NOT NULL DEFAULT 'Customer',
-  `farm_type` varchar(50) NOT NULL
+  `acc_type` varchar(50) CHARACTER SET armscii8 COLLATE armscii8_general_ci NOT NULL DEFAULT 'Customer'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `tbl_customer`
 --
 
-INSERT INTO `tbl_customer` (`cust_id`, `cust_name`, `cust_cname`, `cust_email`, `cust_phone`, `cust_country`, `cust_address`, `cust_city`, `cust_state`, `cust_zip`, `cust_b_name`, `cust_b_cname`, `cust_b_phone`, `cust_b_country`, `cust_b_address`, `cust_b_city`, `cust_b_state`, `cust_b_zip`, `cust_s_name`, `cust_s_cname`, `cust_s_phone`, `cust_s_country`, `cust_s_address`, `cust_s_city`, `cust_s_state`, `cust_s_zip`, `cust_password`, `cust_token`, `cust_datetime`, `cust_timestamp`, `cust_status`, `acc_type`, `farm_type`) VALUES
-(1, 'Liam Moore', 'WV Company', 'liam@mail.com', '7458965410', 230, '788 Cottonwood Lane', 'Nashville', 'TN', '37072', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '5f4dcc3b5aa765d61d8327deb882cf99', '4d16fbf499a20f8d0f0af8d9e1669810', '2022-03-17 11:09:34', '1710831717', 1, 'customer', ''),
-(2, 'Chad N. Carney', 'none', 'chad@mail.com', '4785690000', 230, '469 Diamond Street', 'Charlotte', 'NC', '28808', 'Chad N. Carney', 'none', '7477474440', 230, '469 Diamond Street', 'Charlotte', 'NC', '28808', 'Chad N. Carney', 'none', '7477474440', 230, '469 Diamond Street', 'Charlotte', 'NC', '28808', '5f4dcc3b5aa765d61d8327deb882cf99', 'ca87666426f4bc5c5128a96dabfecefb', '2022-03-17 11:15:26', '1647544526', 1, 'customer', ''),
-(3, 'Jean Collins', 'none', 'jean@mail.com', '1478523698', 230, '1508 Crosswind Drive', 'Owensboro', 'KY', '13040', 'Jean Collins', 'none', '1478523698', 230, '1508 Crosswind Drive', 'Owensboro', 'KY', '13040', 'Jean Collins', 'none', '1478523698', 230, '1508 Crosswind Drive', 'Owensboro', 'KY', '13040', '5f4dcc3b5aa765d61d8327deb882cf99', '6b3439bf95644a36a1ed92bef374ebb7', '2022-03-20 10:29:39', '1647797379', 1, 'customer', ''),
-(4, 'Annie Young', 'XYZ Company', 'annie@mail.com', '7770001144', 230, '79 Burwell Heights Road', 'Beaumont', 'TX', '77400', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '5f4dcc3b5aa765d61d8327deb882cf99', 'fc8f07537cdd6b3f89eb94f1cad78060', '2022-03-20 10:31:35', '1647797495', 1, 'customer', ''),
-(5, 'Matthew Morales', 'ABC Company', 'matthew@mail.com', '7896587450', 230, '81 Felosa Drive', 'Mira Loma', 'CA', '91002', 'Matthew Morales', 'ABC Company', '7896587450', 230, '81 Felosa Drive', 'Mira Loma', 'CA', '91002', 'Matthew Morales', 'ABC Company', '7896587450', 230, '81 Felosa Drive', 'Mira Loma', 'CA', '91002', '5f4dcc3b5aa765d61d8327deb882cf99', 'c391105908fe01a636bfa5fc39eed33d', '2022-03-20 10:33:15', '1647797595', 1, 'customer', ''),
-(6, 'August F. Freels', 'none', 'august@mail.com', '1478547850', 230, '96 Johnny Lane', 'Milwaukee', 'WI', '55550', 'August F. Freels', 'none', '1478547850', 230, '96 Johnny Lane', 'Milwaukee', 'WI', '55550', 'August F. Freels', 'none', '1478547850', 230, '96 Johnny Lane', 'Milwaukee', 'WI', '55550', '5f4dcc3b5aa765d61d8327deb882cf99', 'decc1fc2c5dd9935df82c0233002ce66', '2022-03-20 10:34:08', '1647797648', 1, 'customer', ''),
-(7, 'Carl M. Dineen', 'none', 'carl@mail.com', '789878987', 230, '77 Lyndon Street', 'Kutztown', 'PA', '19855', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '5f4dcc3b5aa765d61d8327deb882cf99', 'c79bac688e70cc9665a2164c57ec172c', '2022-03-20 10:35:02', '1647797702', 1, 'customer', ''),
-(26, 'Thapson Nyirenda', 'none', 'thapsonknyirenda@gmail.com', '0880218905', 132, 'kafukule, box 56', 'Mzuzu', 'none', 'none', 'Shipping address', 'none', '0880218905', 0, 'Mbayani Blantyre, Malawi', 'Mzuzu', 'Mzimba', '', 'Shipping address', 'none', '0880218905', 1, 'Mbayani Blantyre, Malawi', 'Mzuzu', 'Mzimba', 'none', 'c4ca4238a0b923820dcc509a6f75849b', 'dcf944a622ea613a54d4442607aaf4d6', '2024-03-19 05:46:24', '1710905557', 1, 'customer', ''),
-(33, 'Kapembe', '', 'kapembe@mail.com', '0880218905', 0, 'Kafukule health Centre, box 56, Kafukule mzimba', 'Mzimba - Kafukule', '', '', '', '', '', 0, '', '', '', '', '', '', '', 0, '', '', '', '', '202cb962ac59075b964b07152d234b70', '539f779cba35d46e930ec63134453252', '2024-03-24 10:35:12', '1711301712', 1, 'vendor', 'Any'),
-(34, 'John Banda', '', 'john@gmail.com', '0880218905', 0, 'Mzuzu, box 56', 'Mzuzu', '', '', 'Thapson Nyirenda', 'none', '0880218905', 0, 'kafukule, box 56', 'Mzuzu', 'Mzimba', '', 'Thapson Nyirenda', 'none', '0880218905', 0, 'kafukule, box 56', 'Mzuzu', 'Mzimba', '', '202cb962ac59075b964b07152d234b70', '0bcd71075b278a88cb28b09d195f1456', '2024-03-26 11:54:00', '1711479240', 1, 'customer', 'Fruit farmer');
+INSERT INTO `tbl_customer` (`cust_id`, `cust_name`, `cust_email`, `cust_phone`, `cust_address`, `cust_city`, `cust_s_name`,  `cust_s_phone`,  `cust_s_address`, `cust_s_city`, `cust_s_state`, `cust_password`, `cust_token`, `cust_datetime`, `cust_timestamp`, `cust_status`, `acc_type`) VALUES
+(1, '?', '?', '?', '?', '?' '?', '?', '?', '?', '?' '?', '?', '?', '?', '?');
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `tbl_customer_message`
---
-
-CREATE TABLE `tbl_customer_message` (
-  `customer_message_id` int(11) NOT NULL,
-  `subject` varchar(255) NOT NULL,
-  `message` text NOT NULL,
-  `order_detail` text NOT NULL,
-  `cust_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `tbl_end_category`
@@ -217,13 +178,13 @@ INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
 (33, 'Payment Section', 'Payment Section'),
 (34, 'Select Payment Method', 'Select Payment Method'),
 (35, 'Select a Method', 'Select a Method'),
-(36, 'PayPal', 'PayPal'),
-(37, 'Stripe', 'Stripe'),
+(36, '', ''),
+(37, '', ''),
 (38, 'Bank Deposit', 'Bank Deposit'),
-(39, 'Card Number', 'Card Number'),
-(40, 'CVV', 'CVV'),
-(41, 'Month', 'Month'),
-(42, 'Year', 'Year'),
+(39, '', ''),
+(40, '', ''),
+(41, '', ''),
+(42, '', ''),
 (43, 'Send to this Details', 'Send to this Details'),
 (44, 'Transaction Information', 'Transaction Information'),
 (45, 'Include transaction id and other information correctly', 'Include transaction id and other information correctly'),
@@ -233,30 +194,30 @@ INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
 (49, 'Categories', 'Categories'),
 (50, 'Category:', 'Category:'),
 (51, 'All Products Under', 'All Products Under'),
-(52, 'Select Size', 'Select Size'),
-(53, 'Select Color', 'Select Color'),
+(52, '', ''),
+(53, '', ''),
 (54, 'Product Price', 'Product Price'),
 (55, 'Quantity', 'Quantity'),
 (56, 'Out of Stock', 'Out of Stock'),
 (59, 'Product Description', 'Product Description'),
-(60, 'Features', 'Features'),
-(61, 'Conditions', 'Conditions'),
-(62, 'Return Policy', 'Return Policy'),
+(60, '', ''),
+(61, '', ''),
+(62, '', ''),
 (70, 'No description found', 'No description found'),
-(71, 'No feature found', 'No feature found'),
-(72, 'No condition found', 'No condition found'),
-(73, 'No return policy found', 'No return policy found'),
+(71, '', ''),
+(72, '', ''),
+(73, '', ''),
 (75, 'Customer Name', 'Customer Name'),
 (79, 'Previous', 'Previous'),
 (80, 'Next', 'Next'),
 (81, 'Sub Total', 'Sub Total'),
 (82, 'Total', 'Total'),
 (83, 'Action', 'Action'),
-(84, 'Shipping Cost', 'Shipping Cost'),
+(84, 'Delivery Cost', 'Delivery Cost'),
 (85, 'Continue Shopping', 'Continue Shopping'),
 (86, 'Update Billing Address', 'Update Billing Address'),
-(87, 'Update Shipping Address', 'Update Shipping Address'),
-(88, 'Update Billing and Shipping Info', 'Update Billing and Shipping Info'),
+(87, 'Update Delivery Address', 'Update Delivery Address'),
+(88, 'Update Billing and Delivery Info', 'Update Billing and Delivery Info'),
 (89, 'Dashboard', 'Dashboard'),
 (90, 'Welcome to the Dashboard', 'Welcome to the Dashboard'),
 (91, 'Back to Dashboard', 'Back to Dashboard'),
@@ -279,10 +240,10 @@ INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
 (114, 'Contact Information', 'Contact Information'),
 (115, 'Contact Form', 'Contact Form'),
 (117, 'Update Profile', 'Update Profile'),
-(118, 'Send Message', 'Send Message'),
-(119, 'Message', 'Message'),
+(118, '', ''),
+(119, '', ''),
 (121, 'Congratulation! Payment is successful.', 'Congratulation! Payment is successful.'),
-(122, 'Billing and Shipping Information is updated successfully.', 'Billing and Shipping Information is updated successfully.'),
+(122, 'Billing and Delivery Information is updated successfully.', 'Billing and Delivery Information is updated successfully.'),
 (123, 'Customer Name can not be empty.', 'Customer Name can not be empty.'),
 (124, 'Phone Number can not be empty.', 'Phone Number can not be empty.'),
 (125, 'Address can not be empty.', 'Address can not be empty.'),
@@ -317,7 +278,7 @@ INSERT INTO `tbl_language` (`lang_id`, `lang_name`, `lang_value`) VALUES
 (159, 'Price', 'Price'),
 (160, 'Please login as customer to checkout', 'Please login as customer to checkout'),
 (161, 'Billing Address', 'Billing Address'),
-(162, 'Shipping Address', 'Shipping Address');
+(162, 'Delivery Address', 'Delivery Address');
 
 -- --------------------------------------------------------
 
@@ -368,8 +329,6 @@ CREATE TABLE `tbl_order` (
   `product_id` int(11) NOT NULL,
   `product_name` varchar(255) NOT NULL,
   `uploader` varchar(100) NOT NULL DEFAULT 'none',
-  `size` varchar(100) NOT NULL,
-  `color` varchar(100) NOT NULL,
   `quantity` varchar(50) NOT NULL,
   `unit_price` varchar(50) NOT NULL,
   `payment_id` varchar(255) NOT NULL
@@ -379,9 +338,8 @@ CREATE TABLE `tbl_order` (
 -- Dumping data for table `tbl_order`
 --
 
-INSERT INTO `tbl_order` (`id`, `product_id`, `product_name`, `uploader`, `size`, `color`, `quantity`, `unit_price`, `payment_id`) VALUES
-(16, 122, 'Second hand wheel barrow', 'kapembe@mail.com', '', '', '2', '100000', '1711481678'),
-(18, 120, 'Tanzanian apples', 'user@gmail.com', '', '', '1', '82', '1711573400');
+INSERT INTO `tbl_order` (`id`, `product_id`, `product_name`, `uploader`, `quantity`, `unit_price`, `payment_id`) VALUES
+(16, 122, 'Second hand wheel barrow', 'patrickkamphulusa@gmail.com', '2', '100000', '1711481678');
 
 -- --------------------------------------------------------
 
