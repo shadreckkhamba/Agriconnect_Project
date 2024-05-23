@@ -35,15 +35,15 @@ if(!isset($_REQUEST['id'])) {
         unlink('../assets/uploads/product_photos/'.$photo);
     }
 
-    // Delete from tbl_product
+    // Delete from the table of Products
     $statement = $pdo->prepare("DELETE FROM tbl_product WHERE p_id=?");
     $statement->execute(array($_REQUEST['id']));
 
-    // Delete from tbl_product_photo
+    // Delete from the table of produc photos
     $statement = $pdo->prepare("DELETE FROM tbl_product_photo WHERE p_id=?");
     $statement->execute(array($_REQUEST['id']));
 
-    // Delete from tbl_product_size
+    // Delete from product size tb
     $statement = $pdo->prepare("DELETE FROM tbl_product_size WHERE p_id=?");
     $statement->execute(array($_REQUEST['id']));
 
@@ -55,7 +55,7 @@ if(!isset($_REQUEST['id'])) {
     $statement = $pdo->prepare("DELETE FROM tbl_rating WHERE p_id=?");
     $statement->execute(array($_REQUEST['id']));
 
-    // Delete from tbl_payment
+    // Delete from payment table
     $statement = $pdo->prepare("SELECT * FROM tbl_order WHERE product_id=?");
     $statement->execute(array($_REQUEST['id']));
     $result = $statement->fetchAll(PDO::FETCH_ASSOC);							
@@ -64,7 +64,7 @@ if(!isset($_REQUEST['id'])) {
         $statement1->execute(array($row['payment_id']));
     }
 
-    // Delete from tbl_order
+    // Delete from order table
     $statement = $pdo->prepare("DELETE FROM tbl_order WHERE product_id=?");
     $statement->execute(array($_REQUEST['id']));
 
