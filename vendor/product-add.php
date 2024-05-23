@@ -73,7 +73,7 @@ if(isset($_POST['form1'])) {
             $photo = array_values(array_filter($_FILES['photo']["name"]));
             $photo_temp = array_values(array_filter($_FILES['photo']["tmp_name"]));
 
-            // Get next ID for tbl_product_photo
+            // Get next ID for product photo table
             $statement = $pdo->prepare("SHOW TABLE STATUS LIKE 'tbl_product_photo'");
             $statement->execute();
             $result = $statement->fetchAll();
@@ -93,7 +93,7 @@ if(isset($_POST['form1'])) {
                 }
             }
 
-            // Insert additional photos into tbl_product_photo
+            // Insert additional photos into product photo table
             if(isset($final_name1)) {
                 for($i = 0; $i < count($final_name1); $i++) {
                     $statement = $pdo->prepare("INSERT INTO tbl_product_photo (photo, p_id) VALUES (?, ?)");
@@ -106,7 +106,7 @@ if(isset($_POST['form1'])) {
         $final_name = 'product-featured-' . $ai_id . '.' . $ext;
         move_uploaded_file($path_tmp, '../assets/uploads/' . $final_name);
 
-        // Insert product data into tbl_product
+        // Insert product data into product table
         $statement = $pdo->prepare("INSERT INTO tbl_product(
                                         p_name,
                                         uploader,
