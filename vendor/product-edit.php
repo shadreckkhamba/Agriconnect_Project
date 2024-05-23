@@ -1,6 +1,4 @@
-```php
 <?php require_once('header.php'); ?>
-
 <?php
 // Check if user has submitted the form
 if(isset($_POST['form1'])) {
@@ -619,6 +617,5 @@ if(isset($_POST['form1'])) {
 				</div>
 				</div>
 				
-				</section>
-				
+				</section>	
 				<?php require_once('footer.php'); ?>
