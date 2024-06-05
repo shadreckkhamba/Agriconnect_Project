@@ -1,9 +1,10 @@
 <?php
-ob_start();
 session_start();
-include("../admin/inc/config.php");
+ob_start();
+include("inc/config.php");
 include("inc/functions.php");
 include("inc/CSRF_Protect.php");
+// cross site request forgery protect
 $csrf = new CSRF_Protect();
 $error_message = '';
 $success_message = '';
@@ -11,8 +12,8 @@ $error_message1 = '';
 $success_message1 = '';
 
 // Check if the user is logged in or not
-if(!isset($_SESSION['user1'])) {
-	header('location: ../login.php');
+if(!isset($_SESSION['user'])) {
+	header('location: login.php');
 	exit;
 }
 ?>
@@ -22,10 +23,10 @@ if(!isset($_SESSION['user1'])) {
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>vendor Panel</title>
+	<title>Admin Panel</title>
 
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-
+    <!-- importing style -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/ionicons.min.css">
@@ -53,23 +54,22 @@ if(!isset($_SESSION['user1'])) {
 			</a>
 
 			<nav class="navbar navbar-static-top">
-				
+				<!-- displaying admin panel options -->
 				<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
 					<span class="sr-only">Toggle navigation</span>
 				</a>
 
-				<span style="float:left;line-height:50px;color:#fff;padding-left:15px;font-size:18px;">Vendor Panel</span>
+				<span style="float:left;line-height:50px;color:#fff;padding-left:15px;font-size:18px;">Admin Panel</span>
     <!-- Top Bar ... User Inforamtion .. Login/Log out Area -->
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
 						<li class="dropdown user user-menu">
+                            <!-- dropdown for selecting option for logout or editing profile -->
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<img src="../assets/uploads/<?php echo $_SESSION['user1']['photo']; ?>" class="user-image" alt="User Image">
-                                <!-- displaying the name of the vendor in the vendor panel header -->
-								<span class="hidden-xs"><?php echo $_SESSION['user1']['full_name']; ?></span>
+								<img src="../assets/uploads/<?php echo $_SESSION['user']['photo']; ?>" class="user-image" alt="User Image">
+								<span class="hidden-xs"><?php echo $_SESSION['user']['full_name']; ?></span>
 							</a>
 							<ul class="dropdown-menu">
-                                <!-- creating a box to have options of editing profile and to log out -->
 								<li class="user-footer">
 									<div>
 										<a href="profile-edit.php" class="btn btn-default btn-flat">Edit Profile</a>
@@ -95,31 +95,47 @@ if(!isset($_SESSION['user1'])) {
 
 			        <li class="treeview <?php if($cur_page == 'index.php') {echo 'active';} ?>">
 			          <a href="index.php">
+                        <!-- admins dashboard that show statistics -->
 			            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
 			          </a>
 			        </li>
-                    <li class="treeview <?php if( ($cur_page == 'shipping-cost.php') || ($cur_page == 'shipping-cost-edit.php') || ($cur_page == 'top-category.php') || ($cur_page == 'top-category-add.php') || ($cur_page == 'top-category-edit.php') || ($cur_page == 'mid-category.php') || ($cur_page == 'mid-category-add.php') || ($cur_page == 'mid-category-edit.php') || ($cur_page == 'end-category.php') || ($cur_page == 'end-category-add.php') || ($cur_page == 'end-category-edit.php') ) {echo 'active';} ?>">
-                    </li>
-                    <li class="treeview <?php if( ($cur_page == 'product.php') || ($cur_page == 'product-add.php') || ($cur_page == 'product-edit.php') ) {echo 'active';} ?>">
-                        <a href="product.php">
-                            <i class="fa fa-shopping-bag"></i> <span>Product Management</span>
-                        </a>
-                    </li>
 
+					<li class="treeview <?php if( ($cur_page == 'admins.php') || ($cur_page == 'admins-add.php') || ($cur_page == 'admins-edit.php') ) {echo 'active';} ?>">
+			          <a href="admins.php">
+                        <!-- section for managing admins -->
+					  <i class="fa fa-user"></i> <span>Admins Management</span>
+			          </a>
+			        </li>
 
-                    <li class="treeview <?php if( ($cur_page == 'order.php') ) {echo 'active';} ?>">
-                        <a href="order.php">
-                            <i class="fa fa-sticky-note"></i> <span>Order Management</span>
-                        </a>
-                    </li>
+					<li class="treeview <?php if( ($cur_page == 'customer.php') || ($cur_page == 'customer-add.php') || ($cur_page == 'customer-edit.php') ) {echo 'active';} ?>">
+			          <a href="customer.php">
+                        <!-- section for viewing total registered customers -->
+			            <i class="fa fa-users"></i> <span>Registered Customers</span>
+			          </a>
+			        </li>
 
-					<li class="treeview <?php if( ($cur_page == 'payment_details.php' || $cur_page == 'payment_details_add.php' || $cur_page == 'payment_details_edit.php' ||$cur_page == 'payment_details_delete.php') ) {echo 'active';} ?>">
-                        <a href="payment_details.php">
-						<i class="fa fa-credit-card"></i> <span>Payment Details</span>
-                        </a>
-                    </li>
+					<li class="treeview <?php if( ($cur_page == 'vendor.php') || ($cur_page == 'vendor-add.php') || ($cur_page == 'vendor-edit.php') ) {echo 'active';} ?>">
+			          <a href="vendor.php">
+                        <!-- viewing registered vendors -->
+					  <i class="fa fa-user"></i> <span>Registered Vendors</span>
+			          </a>
+			        </li>
+
+					<li class="treeview <?php if( ($cur_page == 'order.php') ) {echo 'active';} ?>">
+			          <a href="order.php">
+                        <!-- viewing orders -->
+					  		<i class="fa fa-sticky-note"></i> <span>Orders Management</span>
+			          </a>
+			        </li>
+					
+			        <li class="treeview <?php if( ($cur_page == 'settings.php') ) {echo 'active';} ?>">
+			          <a href="settings.php">
+                        <!-- settings for managing the platform -->
+			            <i class="fa fa-sliders"></i> <span>Website Settings</span>
+			          </a>
+			        </li>    
       			</ul>
     		</section>
   		</aside>
 
-  		<div class="content-wrapper">
+  	<div class="content-wrapper">
