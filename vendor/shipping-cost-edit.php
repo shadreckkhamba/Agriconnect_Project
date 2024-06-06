@@ -4,9 +4,9 @@
 if(isset($_POST['form1'])) {
 	$valid = 1;
 
-    if(empty($_POST['country_id'])) {
+    if(empty($_POST['location_id'])) {
         $valid = 0;
-        $error_message .= "You must have to select a country<br>";
+        $error_message .= "You must have to select location<br>";
     } else {
 		// Duplicate Country checking
     	// current Country name that is in the database
@@ -17,8 +17,8 @@ if(isset($_POST['form1'])) {
 			$current_country = $row['country_id'];
 		}
 
-		$statement = $pdo->prepare("SELECT * FROM tbl_shipping_cost WHERE country_id=? and country_id!=?");
-    	$statement->execute(array($_POST['country_id'],$current_country));
+		$statement = $pdo->prepare("SELECT * FROM tbl_shipping_cost WHERE location_id=? and location_id!=?");
+    	$statement->execute(array($_POST['location_id'],$current_country));
     	$total = $statement->rowCount();							
     	if($total) {
     		$valid = 0;
@@ -29,7 +29,7 @@ if(isset($_POST['form1'])) {
     if($valid == 1) {    	
 		// updating into the database
 		$statement = $pdo->prepare("UPDATE tbl_shipping_cost SET country_id=?,amount=? WHERE shipping_cost_id=?");
-		$statement->execute(array($_POST['country_id'],$_POST['amount'],$_REQUEST['id']));
+		$statement->execute(array($_POST['location_id'],$_POST['amount'],$_REQUEST['id']));
 
     	$success_message = 'Shipping Cost is updated successfully.';
     }
