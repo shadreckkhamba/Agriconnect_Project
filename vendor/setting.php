@@ -922,7 +922,7 @@ foreach ($result as $row) {
                             <div class="box box-info">
                                 <div class="box-body">
                                     
-                                
+
                                     <div class="form-group">
                                         <label for="" class="col-sm-4 control-label">Home Page (How many featured product?)<span>*</span></label>
                                         <div class="col-sm-2">
@@ -1073,60 +1073,6 @@ foreach ($result as $row) {
 
 
 
-                           <!-- <h3>Call to Action Section</h3>
-                            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                            <div class="box box-info">
-                                <div class="box-body">                                          
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Title<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="cta_title" value="<?php echo $cta_title; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Content<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <textarea name="cta_content" class="form-control" cols="30" rows="10" style="height:120px;"><?php echo $cta_content; ?></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Read More Text<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="cta_read_more_text" value="<?php echo $cta_read_more_text; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Read More URL<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="cta_read_more_url" value="<?php echo $cta_read_more_url; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Existing Call to Action Background</label>
-                                        <div class="col-sm-6" style="padding-top:6px;">
-                                            <img src="../assets/uploads/<?php echo $cta_photo; ?>" class="existing-photo" style="height:80px;">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">New Background</label>
-                                        <div class="col-sm-6" style="padding-top:6px;">
-                                            <input type="file" name="cta_photo">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label"></label>
-                                        <div class="col-sm-6">
-                                            <button type="submit" class="btn btn-success pull-left" name="form6_7">Update</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </form>-->
-
-
-
-
-
                             <h3>Featured Product Section</h3>
                             <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                             <div class="box box-info">
@@ -1206,75 +1152,6 @@ foreach ($result as $row) {
                                 </div>
                             </div>
                             </form>
-
-
-                            <!--
-                            <h3>Testimonial Section</h3>
-                            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                            <div class="box box-info">
-                                <div class="box-body">                                          
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Testimonial Section Title<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="testimonial_title" value="<?php echo $testimonial_title; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Testimonial Section SubTitle<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="testimonial_subtitle" value="<?php echo $testimonial_subtitle; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Existing Testimonial Background</label>
-                                        <div class="col-sm-6" style="padding-top:6px;">
-                                            <img src="../assets/uploads/<?php echo $testimonial_photo; ?>" class="existing-photo" style="height:80px;">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">New Background</label>
-                                        <div class="col-sm-6" style="padding-top:6px;">
-                                            <input type="file" name="testimonial_photo">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label"></label>
-                                        <div class="col-sm-6">
-                                            <button type="submit" class="btn btn-success pull-left" name="form6_1">Update</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </form>
-
-
-                            <h3>Blog Section</h3>
-                            <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
-                            <div class="box box-info">
-                                <div class="box-body">                                          
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Blog Section Title<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="blog_title" value="<?php echo $blog_title; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label">Blog Section SubTitle<span>*</span></label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="blog_subtitle" value="<?php echo $blog_subtitle; ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="" class="col-sm-3 control-label"></label>
-                                        <div class="col-sm-6">
-                                            <button type="submit" class="btn btn-success pull-left" name="form6_2">Update</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </form>
-
-                                    -->
                             
 
                             <h3>Newsletter Section</h3>
